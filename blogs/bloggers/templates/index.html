@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <title>Responsive Page Example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .window-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .window {
+      max-width: 400px;
+    }
+
+    .card {
+      border: none;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-top {
+      object-fit: contain;
+      max-height: 200px;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+
+    .card-text {
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+{% include "navbar.html" %}
+{%block content%}
+
+  <div class="image-container text-center py-5">
+    <img src="{% static 'wallpaper.jpg' %}" class="img-fluid" alt="Banner Image">
+  </div>
+
+  <div class="window-container">
+    <div class="window">
+      <div class="card">
+        <img src="{% static 'download.jpg' %}" class="card-img-top" alt="Window 1 Image">
+        <div class="card-body">
+          <h5 class="card-title">Get into Readers Account</h5>
+                <div class="text-center">
+                  <a href="#" class="btn btn-primary">Button 1</a>
+                  <a href="#" class="btn btn-secondary">Button 2</a>
+                </div>        </div>
+      </div>
+    </div>
+
+    <div class="window">
+      <div class="card">
+        <img src="{% static 'download.jpg' %}" class="card-img-top" alt="Window 2 Image">
+        <div class="card-body">
+          <h5 class="card-title" >Content Creater Account</h5>
+                <div class="text-center">
+                  <a href="#" class="btn btn-primary">Button 1</a>
+                  <a href="#" class="btn btn-secondary">Button 2</a>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+{%endblock content%}
+{% include "footer.html" %}
+
+</body>
+</html>
+
